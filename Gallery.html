@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | MagnetFoods</title>
+    <link rel="stylesheet" href="output.css">
+
+</head>
+<body   >
+     <div id="navbar"></div>
+    <div class="overflow-hidden bg-white"> 
+    <section
+      class="flex relative flex-col   items-center px-20 py-20 w-full font-bold text-center text-black min-h-80 max-md:px-5 max-md:py-24 max-md:max-w-full"
+       
+    >
+      <img
+        src="assets/GalleryBg1.png"
+        alt="Background"
+        class="object-fill absolute inset-0 size-full "
+      />
+      <div
+        class="flex relative flex-col -mb-10 max-w-full w-fit max-md:mb-2.5"
+      > 
+        <h2 class="self-center text-white ml-3 text-6xl leading-none max-md:text-4xl">
+          Our Gallery
+        </h2>
+      </div>
+      
+    </section>
+ <section class="py-16 relative" style="background-image: url(assets/GalleryBg.png);">
+ <div class="container max-w-5xl mx-auto px-4"> 
+
+    <!-- Slider Wrapper -->
+    <div class="relative  h-1/4 max-w-full mx-auto ">
+      <!-- Main Slider Image -->
+      <div id="slider" class="w-full h-full">
+        <img src="assets/G1.webp" alt="Gallery image" class="w-full h-[30rem] object-cover shadow-md rounded-lg">
+      </div>
+
+      <!-- Navigation Buttons -->
+  <button id="prev" class="absolute -left-15 top-1/2  cursor-pointer -translate-y-1/2 border border-gray-400 hover:border-black  text-black p-3 rounded-full shadow-md w-12 h-12 flex items-center justify-center">
+  &#10094;
+</button>
+<button id="next" class="absolute -right-15 top-1/2 cursor-pointer -translate-y-1/2 border border-gray-400 hover:border-black text-black p-3 rounded-full shadow-md w-12 h-12 flex items-center justify-center">
+  &#10095;
+</button>
+
+    </div>
+
+    <!-- Thumbnail Gallery -->
+    <div class="grid grid-cols-4 md:grid-cols-6  gap-2 mt-8">
+      <img src="assets/G1.webp" class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer" data-index="0">
+      <img src="assets/G2.webp" class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer" data-index="1">
+      <img src="assets/G3.webp" class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer" data-index="2">
+      <img src="assets/G4.webp" class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer" data-index="3">
+      <img src="assets/G5.webp" class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer" data-index="4">
+      <img src="assets/G6.webp" class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer" data-index="5">
+    </div>
+  </div>
+</section>
+ 
+ <div id="footer"></div>
+ <script src="index.js"></script>
+ 
+</body>
+</html> 
