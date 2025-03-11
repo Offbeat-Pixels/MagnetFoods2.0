@@ -26,8 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(file)
       .then((response) => response.text())
       .then((data) => {
-        document.getElementById(id).innerHTML = data;
-        if (callback) callback(); // Ensure Navbar() runs after loading
+        const container = document.getElementById(id);
+        if (container) {
+          container.innerHTML = data;
+          if (callback) callback(); // Ensure Navbar() runs after loading
+        }
       })
       .catch((error) => console.error(`Error loading ${file}:`, error));
   }
@@ -37,100 +40,96 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("footer", "footer.html");
 });
 
+// Mobile menu toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.querySelector("button.md\\:hidden");
+  const nav = document.querySelector("nav");
 
- 
-    // Mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuButton = document.querySelector('button.md\\:hidden');
-      const nav = document.querySelector('nav');
-      
-      mobileMenuButton.addEventListener('click', function() {
+  mobileMenuButton.addEventListener("click", function () {
+    nav.classList.toggle("hidden");
+  });
 
-        nav.classList.toggle('hidden');
-      });
-      
-      // Testimonial slider
-      let slideIndex = 0;
-      const slides = document.querySelectorAll('.testimonial-slide');
-      const dots = document.querySelectorAll('.dot');
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-       if (!slides.length || !dots.length) {
-          console.warn("No slides or dots found");
-          return;
-        }
-      function showSlide(n) {
-        // Reset
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].classList.remove('active');
-          dots[i].classList.remove('active');
-        }
-        
-        // Set current slide
-        slideIndex = (n + slides.length) % slides.length;
-        slides[slideIndex].classList.add('active');
-        dots[slideIndex].classList.add('active');
-      }
-      
-      // Event listeners
-      prevBtn.addEventListener('click', () => showSlide(slideIndex - 1));
-      nextBtn.addEventListener('click', () => showSlide(slideIndex + 1));
-      
-      // Dot navigation
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => showSlide(index));
-      });
-      
-      // Auto slide
-      setInterval(() => {
-        showSlide(slideIndex + 1);
-      }, 500);
-    });
-
-
-     document.addEventListener("DOMContentLoaded", () => {
-    const slider = document.getElementById("slider").querySelector("img");
-    const thumbnails = document.querySelectorAll(".thumb");
-    const prevBtn = document.getElementById("prev");
-    const nextBtn = document.getElementById("next");
-
-    const images = [
-      "assets/G1.webp",
-      "assets/G2.webp",
-      "assets/G3.webp",
-      "assets/G4.webp",
-      "assets/G5.webp",
-      "assets/G6.webp"
-    ];
-    
-    let currentIndex = 0;
-    
-    function updateImage(index) {
-      slider.src = images[index];
-      currentIndex = index;
+  // Testimonial slider
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".testimonial-slide");
+  const dots = document.querySelectorAll(".dot");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  if (!slides.length || !dots.length) {
+    console.warn("No slides or dots found");
+    return;
+  }
+  function showSlide(n) {
+    // Reset
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+      dots[i].classList.remove("active");
     }
 
-    // Next button
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      updateImage(currentIndex);
-    });
+    // Set current slide
+    slideIndex = (n + slides.length) % slides.length;
+    slides[slideIndex].classList.add("active");
+    dots[slideIndex].classList.add("active");
+  }
 
-    // Previous button
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      updateImage(currentIndex);
-    });
+  // Event listeners
+  prevBtn.addEventListener("click", () => showSlide(slideIndex - 1));
+  nextBtn.addEventListener("click", () => showSlide(slideIndex + 1));
 
-    // Click on thumbnails
-    thumbnails.forEach((thumb) => {
-      thumb.addEventListener("click", (e) => {
-        updateImage(parseInt(e.target.getAttribute("data-index")));
-      });
-    }); 
+  // Dot navigation
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => showSlide(index));
   });
-  
-  document.addEventListener("DOMContentLoaded", () => {
+
+  // Auto slide
+  setInterval(() => {
+    showSlide(slideIndex + 1);
+  }, 500);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("slider").querySelector("img");
+  const thumbnails = document.querySelectorAll(".thumb");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  const images = [
+    "assets/G1.webp",
+    "assets/G2.webp",
+    "assets/G3.webp",
+    "assets/G4.webp",
+    "assets/G5.webp",
+    "assets/G6.webp",
+  ];
+
+  let currentIndex = 0;
+
+  function updateImage(index) {
+    slider.src = images[index];
+    currentIndex = index;
+  }
+
+  // Next button
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage(currentIndex);
+  });
+
+  // Previous button
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage(currentIndex);
+  });
+
+  // Click on thumbnails
+  thumbnails.forEach((thumb) => {
+    thumb.addEventListener("click", (e) => {
+      updateImage(parseInt(e.target.getAttribute("data-index")));
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   lottie.loadAnimation({
     container: document.getElementById("lottie-container"), // The target div
     renderer: "svg", // Use 'svg', 'canvas', or 'html'
@@ -139,5 +138,3 @@ document.addEventListener("DOMContentLoaded", () => {
     path: "assets/food-bowl.json", // Path to your Lottie JSON file
   });
 });
-
-   
