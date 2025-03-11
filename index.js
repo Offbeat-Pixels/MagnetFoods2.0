@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Load Navbar and initialize scripts after it's loaded
-  loadComponent("navbar", "navbar.html", Navbar);
-  loadComponent("footer", "footer.html");
+  loadComponent("navbar", "Navbar.html", Navbar);
+  loadComponent("footer", "Footer.html");
 });
 
 // Mobile menu toggle
