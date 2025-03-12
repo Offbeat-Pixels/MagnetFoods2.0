@@ -4,19 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Magnet Foods - Catering Services</title> 
-  <link rel="stylesheet" href="output.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <link rel="stylesheet" href="output.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
  
 </head>
 <body class="overflow-y-visible   ">
     <div id="navbar"></div>
  
   <!-- Hero Section -->
-  <section class="py-10 px-4     ">
-    <div class=" ">
-      <div class="flex flex-wrap justify-center items-center">
-        <div class="w-full md:px-20 container mx-auto ">
-          <div class=" flex overflow-x-scroll md:overflow-auto md:grid md:grid-cols-4 gap-5   relative">
+  
+<section class="py-10 px-4">
+    <div>
+        <div class="flex flex-wrap justify-center items-center">
+             <div class="w-full md:pl-20 md:px-20 md:container mx-auto ">
+                <!-- Swiper Container for Small Screens -->
+                <div class="swiper-container md:hidden">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/hero-1.png" alt="Food platter" class="at-item  w-full object-contain ">
+                        </div>
+                        <div class="swiper-slide">
+                     <img src="assets/hero-2.png" alt="Outdoor event" class="at-item  w-full object-contain ">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/hero-3.png" alt="Poolside setup" class=" at-item w-full object-contain "> 
+                        </div>
+                        <div class="swiper-slide">
+                             <img src="assets/hero-4.png" alt="Dining setup" class="at-item  w-full object-contain ">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid Layout for Larger Screens -->
+           <div class="md:flex flex-wrap hidden justify-center items-center">
+        <div class="w-full pl-20 md:px-20 md:container mx-auto ">
+          <div class=" flex overflow-hidden md:overflow-auto md:grid md:grid-cols-4 gap-8 md:gap-5   relative">
          
               <img src="assets/hero-1.png" alt="Food platter" class="at-item  w-full md:w-fit h-80 md:h-fit  object-contain  shadow-md">
         
@@ -32,12 +55,85 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row mx-auto justify-center w-fit mt-4 gap-4">
-        <a href="#" class="bg-[#DE9641] hover:text-black  text-white font-bold py-2 px-6 rounded-md">2025 CATERING MENU</a>
-        <a href="#" class="bg-[#1F7D5B] hover:text-black text-white font-bold py-2 px-6 rounded-md">NEW HOT PACAKGE DEALS</a>
-      </div>
+            </div>
+        </div>
+
+        <!-- <div class="flex flex-col md:flex-row mx-auto justify-center w-fit mt-4 gap-4">
+            <a href="#" class="bg-[#DE9641] hover:text-black text-white font-bold py-2 px-6 rounded-md">
+                2025 CATERING MENU
+            </a>
+            <a href="#" class="bg-[#1F7D5B] hover:text-black text-white font-bold py-2 px-6 rounded-md">
+                NEW HOT PACKAGE DEALS
+            </a>
+        </div> -->
+
+<div class="flex flex-col md:flex-row mx-auto justify-center w-fit mt-4 gap-4">
+    <!-- Open Catering Menu Modal Button -->
+    <button id="openCateringModal" class="bg-[#DE9641] hover:text-black text-white font-bold py-2 px-6 rounded-md">
+        2025 CATERING MENU
+    </button>
+
+    <!-- Open Package Deals Modal Button -->
+    <button id="openDealsModal" class="bg-[#1F7D5B] hover:text-black text-white font-bold py-2 px-6 rounded-md">
+        NEW HOT PACKAGE DEALS
+    </button>
+</div>
+
+<!-- Catering Menu Modal -->
+<div id="cateringModal" class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative">
+        <button id="closeCateringModal" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-xl font-bold">
+            &times;
+        </button>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">2025 Catering Menu</h2>
+        <p class="text-gray-700">
+            Explore our exclusive 2025 catering menu designed for premium events!
+        </p>
+        <ul class="mt-4 space-y-2 text-gray-700">
+            <li>🍽 Gourmet Appetizers</li>
+            <li>🍛 Exclusive Main Courses</li>
+            <li>🥗 Healthy Salads</li>
+            <li>🍰 Signature Desserts</li>
+        </ul>
+        <div class="mt-6 text-right">
+            <button id="closeCateringModal2" class="px-6 py-2 bg-[#DE9641] text-white rounded-md hover:bg-[#c88339]">
+                Close
+            </button>
+        </div>
     </div>
-  </section>
+</div>
+
+<!-- Package Deals Modal -->
+<div id="dealsModal" class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative">
+        <button id="closeDealsModal" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-xl font-bold">
+            &times;
+        </button>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">New Hot Package Deals</h2>
+        <p class="text-gray-700">
+            Check out our amazing package deals for 2025!
+        </p>
+        <ul class="mt-4 space-y-2 text-gray-700">
+            <li>🔥 Discounted Catering Packages</li>
+            <li>🎉 Exclusive Party Deals</li>
+            <li>🥂 VIP Event Packages</li>
+            <li>🍹 Free Beverages on Select Deals</li>
+        </ul>
+        <div class="mt-6 text-right">
+            <button id="closeDealsModal2" class="px-6 py-2 bg-[#1F7D5B] text-white rounded-md hover:bg-[#176b4d]">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+    </div>
+</section>
+
+
+
 
   <!-- Services Section -->
   <section class=" py-10 px-5 md:px-0 ">
@@ -100,8 +196,7 @@
 <rect width="168" height="169" fill="white"/>
 </clipPath>
 </defs>
-</svg> 
-<div id="lottie-container" class="w-52 h-52"></div>
+</svg>  
 
 <a href="services.html" class="text-[#DE9641] h-fit  font-medium hover:underline">READ MORE</a>
         </div>
@@ -326,5 +421,18 @@ by working together, we can make our community stronger.
 <div id="footer"></div>
 
    <script src="index.js"></script> 
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".swiper-container", {
+            loop: true, // Infinite loop
+            autoplay: {
+                delay: 2000, // Auto slide every 3 seconds
+                disableOnInteraction: false
+            },
+            slidesPerView: 1, // Show only 1 image at a time
+            spaceBetween: 10, // Add spacing
+        });
+    });
+</script>
 </body>
 </html>

@@ -138,3 +138,87 @@ document.addEventListener("DOMContentLoaded", () => {
     path: "assets/food-bowl.json", // Path to your Lottie JSON file
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Wait for the footer to load dynamically
+  setTimeout(() => {
+    const modal = document.getElementById("modal");
+    const openModalBtn = document.querySelector("[onclick='openModal()']");
+    const closeModalBtn = document.querySelector("[onclick='closeModal()']");
+
+    // Ensure elements exist before adding event listeners
+    if (modal && openModalBtn && closeModalBtn) {
+      // Open Modal
+      function openModal() {
+        modal.classList.remove("hidden");
+      }
+
+      // Close Modal
+      function closeModal() {
+        modal.classList.add("hidden");
+      }
+
+      // Add event listeners
+      openModalBtn.addEventListener("click", openModal);
+      closeModalBtn.addEventListener("click", closeModal);
+
+      // Close modal when clicking outside the content
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    } else {
+      console.warn(
+        "Modal or buttons not found. Make sure the footer is loaded before this script runs."
+      );
+    }
+  }, 500); // Delay ensures the modal is loaded
+});
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  function setupModal(openBtnId, modalId, closeBtnIds) {
+    const modal = document.getElementById(modalId);
+    const openBtn = document.getElementById(openBtnId);
+    const closeBtns = closeBtnIds.map((id) => document.getElementById(id));
+
+    function openModal() {
+      modal.classList.remove("hidden");
+    }
+
+    function closeModal() {
+      modal.classList.add("hidden");
+    }
+
+    if (openBtn) {
+      openBtn.addEventListener("click", openModal);
+    }
+
+    closeBtns.forEach((button) => {
+      if (button) {
+        button.addEventListener("click", closeModal);
+      }
+    });
+
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  // Setup modals
+  setupModal("openCateringModal", "cateringModal", [
+    "closeCateringModal",
+    "closeCateringModal2",
+  ]);
+  setupModal("openDealsModal", "dealsModal", [
+    "closeDealsModal",
+    "closeDealsModal2",
+  ]);
+});
