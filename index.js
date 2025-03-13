@@ -22,22 +22,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function loadComponent(id, file, callback) {
-    fetch(file)
-      .then((response) => response.text())
-      .then((data) => {
-        const container = document.getElementById(id);
-        if (container) {
-          container.innerHTML = data;
-          if (callback) callback(); // Ensure Navbar() runs after loading
-        }
-      })
-      .catch((error) => console.error(`Error loading ${file}:`, error));
+  function loadComponent(id, paths, callback) {
+    function tryLoad(index) {
+      if (index >= paths.length) {
+        console.error(`Error: None of the paths found for ${id}`);
+        return;
+      }
+
+      fetch(paths[index])
+        .then((response) => {
+          if (!response.ok) throw new Error(`Not Found: ${paths[index]}`);
+          return response.text();
+        })
+        .then((data) => {
+          const container = document.getElementById(id);
+          if (container) {
+            container.innerHTML = data;
+            if (callback) callback();
+          }
+        })
+        .catch(() => tryLoad(index + 1)); // Try next path if the previous fails
+    }
+
+    tryLoad(0); // Start checking paths
   }
 
-  // Load Navbar and initialize scripts after it's loaded
-  loadComponent("navbar", "Navbar.html", Navbar);
-  loadComponent("footer", "Footer.html");
+  // ✅ Add multiple fallback paths for different levels
+  const navbarPaths = [
+    "Navbar.html", // Same folder
+    "../Navbar.html", // One level up
+    "../../Navbar.html", // Two levels up
+    "../../../Navbar.html", // Three levels up
+  ];
+
+  const footerPaths = [
+    "Footer.html",
+    "../Footer.html",
+    "../../Footer.html",
+    "../../../Footer.html",
+  ];
+
+  loadComponent("navbar", navbarPaths, Navbar);
+  loadComponent("footer", footerPaths);
 });
 
 // Mobile menu toggle
@@ -129,18 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  lottie.loadAnimation({
-    container: document.getElementById("lottie-container"), // The target div
-    renderer: "svg", // Use 'svg', 'canvas', or 'html'
-    loop: true, // true for infinite loop, false to play once
-    autoplay: true, // Auto-start animation
-    path: "assets/food-bowl.json", // Path to your Lottie JSON file
-  });
-});
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   // Wait for the footer to load dynamically
   setTimeout(() => {
@@ -178,14 +192,104 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 500); // Delay ensures the modal is loaded
 });
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   function setupModal(openBtnId, modalId, closeBtnIds) {
+//     const modal = document.getElementById(modalId);
+//     const openBtn = document.getElementById(openBtnId);
+//     const closeBtns = closeBtnIds.map((id) => document.getElementById(id));
+
+//     function openModal() {
+//       modal.classList.remove("hidden");
+//     }
+
+//     function closeModal() {
+//       modal.classList.add("hidden");
+//     }
+
+//     if (openBtn) {
+//       openBtn.addEventListener("click", openModal);
+//     }
+
+//     closeBtns.forEach((button) => {
+//       if (button) {
+//         button.addEventListener("click", closeModal);
+//       }
+//     });
+
+//     modal.addEventListener("click", function (event) {
+//       if (event.target === modal) {
+//         closeModal();
+//       }
+//     });
+//   }
+
+//   // Setup modals
+//   setupModal("openCateringModal", "cateringModal", [
+//     "closeCateringModal",
+//     "closeCateringModal2",
+//   ]);
+//   setupModal("openDealsModal", "dealsModal", [
+//     "closeDealsModal",
+//     "closeDealsModal2",
+//   ]);
+// });
 
 
+// document.addEventListener("DOMContentLoaded", function () {
+//   function setupModal(openBtnId, modalId, closeBtnIds) {
+//     const modal = document.getElementById(modalId);
+//     const openBtn = document.getElementById(openBtnId);
+//     const closeBtns = closeBtnIds.map((id) => document.getElementById(id));
+
+//     function openModal() {
+//       modal.classList.remove("hidden");
+//     }
+
+//     function closeModal() {
+//       modal.classList.add("hidden");
+//     }
+
+//     if (openBtn) {
+//       openBtn.addEventListener("click", openModal);
+//     }
+
+//     closeBtns.forEach((button) => {
+//       if (button) {
+//         button.addEventListener("click", closeModal);
+//       }
+//     });
+
+//     modal.addEventListener("click", function (event) {
+//       if (event.target === modal) {
+//         closeModal();
+//       }
+//     });
+//   }
+
+//   // Setup modals
+//   setupModal("openCateringModal", "cateringModal", [
+//     "closeCateringModal",
+//     "closeCateringModal2",
+//   ]);
+//   setupModal("openDealsModal", "dealsModal", [
+//     "closeDealsModal",
+//     "closeDealsModal2",
+//   ]);
+//   setupModal("openMenuModal", "menuModal", [
+//     "closeMenuModal",
+//     "closeMenuModal2",
+//   ]);
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   function setupModal(openBtnId, modalId, closeBtnIds) {
     const modal = document.getElementById(modalId);
     const openBtn = document.getElementById(openBtnId);
-    const closeBtns = closeBtnIds.map((id) => document.getElementById(id));
+    const closeBtns = closeBtnIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean); // Remove null values
+
+    if (!modal || !openBtn || closeBtns.length === 0) return; // Prevent script errors
 
     function openModal() {
       modal.classList.remove("hidden");
@@ -195,14 +299,10 @@ document.addEventListener("DOMContentLoaded", function () {
       modal.classList.add("hidden");
     }
 
-    if (openBtn) {
-      openBtn.addEventListener("click", openModal);
-    }
+    openBtn.addEventListener("click", openModal);
 
     closeBtns.forEach((button) => {
-      if (button) {
-        button.addEventListener("click", closeModal);
-      }
+      button.addEventListener("click", closeModal);
     });
 
     modal.addEventListener("click", function (event) {
@@ -212,11 +312,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Setup modals
-  setupModal("openCateringModal", "cateringModal", [
-    "closeCateringModal",
-    "closeCateringModal2",
+  // Ensure elements exist before setting up
+  setupModal("openMenuModal", "menuModal", [
+    "closeMenuModal",
+    "closeMenuModal2",
   ]);
+    setupModal("openCateringModal", "cateringModal", [
+      "closeCateringModal",
+      "closeCateringModal2",
+    ]);
   setupModal("openDealsModal", "dealsModal", [
     "closeDealsModal",
     "closeDealsModal2",
