@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs | MagnetFoods</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="overflow-hidden bg-white">
+      <section
+        style="background-image: url(assets/BlogBg.png)"
+        class="bg-contain bg-center bg-repeat-x flex relative flex-col overflow-hidden items-center px-4 sm:px-10 md:px-20 py-10 sm:py-16 md:py-20 w-full font-bold text-center text-black min-h-48 sm:min-h-64 md:min-h-80"
+      >
+        <div class="flex relative flex-col w-fit">
+          <h2 class="self-center text-4xl sm:text-5xl md:text-6xl leading-none">
+            Blogs
+          </h2>
+        </div>
+      </section>
+
+      <div
+        class="relative my-6 sm:my-8 md:my-10 w-full mx-auto px-4 sm:px-6 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-5xl overflow-hidden"
+      >
+        <!-- Responsive Blog Grid -->
+        <div
+          id="carousel"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-4 md:gap-6"
+        >
+          <!-- Blog Card 1 -->
+          <div class="w-full mx-auto max-w-xs">
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden relative h-96"
+            >
+              <img
+                src="assets/Blog1.png"
+                alt="Blog Image"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-2 left-2 right-2 text-center mx-auto h-auto min-h-16 sm:h-20 bg-white p-3 sm:p-4 rounded"
+              >
+                <a
+                  href="Blogs/themes-for-your-next-event.html.html"
+                  class="text-base sm:text-lg font-semibold"
+                  >Themes to Make Your Next Event Unforgettable</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Blog Card 2 -->
+          <div class="w-full mx-auto max-w-xs">
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden relative h-96"
+            >
+              <img
+                src="assets/Blog2.png"
+                alt="Blog Image"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-2 left-2 right-2 text-center mx-auto h-auto min-h-16 sm:h-20 bg-white p-3 sm:p-4 rounded"
+              >
+                <a
+                  href="Blogs/guest-management.html"
+                  class="text-base sm:text-lg font-semibold"
+                  >Guest Management During an Event</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Blog Card 3 -->
+          <div class="w-full mx-auto max-w-xs">
+            <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden relative h-96"
+            >
+              <img
+                src="assets/Blog3.png"
+                alt="Blog Image"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-2 left-2 right-2 text-center mx-auto h-auto min-h-16 sm:h-20 bg-white p-3 sm:p-4 rounded"
+              >
+                <a
+                  href="Blogs/role-of-an-event-consultant.html"
+                  class="text-base sm:text-lg font-semibold"
+                  >Role of an Event Consultant</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer" class="mt-10"></div>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* body{
+   selection:bg-[#db8829] selection:text-white 
+} */
+
+@layer base{
+    ::selection{
+        @apply bg-[#ed9b3d] text-white 
+    }
+
+}
+
+
+.myanim {
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+ 
+@keyframes myAnim {
+  0% {
+    background-position: center bottom;
+    background-size: 100%;
+  }
+
+  100% {
+    background-position: center bottom;
+    background-size: 150%;
+  }
+}
+
+
+	div.at-container {
+		display: flex;
+		align-items: center;
+		justify-content: center; 
+	}
+	.at-item { 
+		
+		animation-name: slit-in-horizontal;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+		animation-iteration-count: 1;
+		animation-direction: normal;
+		animation-fill-mode: none;
+			
+		/* shorthand
+		animation: slit-in-horizontal 1s linear 0s 1 normal none;*/
+	}
+	@keyframes slit-in-horizontal {
+			
+		0% {
+			transform:translateZ(-800px) rotateX(90deg);
+			opacity:0;
+		}
+		50% {
+			transform:translateZ(-160px) rotateX(87deg);
+			opacity:1;
+		}
+		100% {
+			transform:translateZ(0) rotateX(0);
+		}
+	}
+ 
+
+
+
+
+
+.testimonial-slider {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    
+    .testimonial-slide {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .testimonial-slide.active {
+      display: block;
+    }
+    
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .dot.active {
+      background-color: #e67e22;
+    }

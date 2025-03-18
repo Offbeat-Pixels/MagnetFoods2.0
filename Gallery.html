@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | MagnetFoods</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <!-- Remain same -->
+    <div id="navbar"></div>
+    <div class="overflow-hidden bg-white">
+      <section
+        class="relative flex flex-col justify-center items-center w-full text-center text-white h-20 md:h-60 lg:h-80 px-5 py-10 md:py-24"
+      >
+        <img
+          src="assets/GalleryBg1.png"
+          alt="Background"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <h2
+          class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold z-10"
+        >
+          Our Gallery
+        </h2>
+      </section>
+
+      <section
+        class="py-8 sm:py-12 md:py-16 relative"
+        style="background-image: url(assets/GalleryBg.png)"
+      >
+        <div class="container max-w-5xl mx-auto px-4">
+          <!-- Slider Wrapper -->
+          <div class="relative mx-auto">
+            <!-- Main Slider Image -->
+            <div id="slider" class="w-full">
+              <img
+                src="assets/G1.webp"
+                alt="Gallery image"
+                class="w-full h-48 sm:h-64 md:h-96 lg:h-[30rem] object-cover shadow-md rounded-lg"
+              />
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button
+              id="prev"
+              class="absolute left-2 sm:-left-5 md:-left-15 top-1/2 cursor-pointer translate-y-24 md:-translate-y-1/2 border border-gray-400 hover:border-black text-black p-2 sm:p-3 rounded-full shadow-md w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center"
+            >
+              &#10094;
+            </button>
+            <button
+              id="next"
+              class="absolute right-2 sm:-right-5 md:-right-15 top-1/2 cursor-pointer translate-y-24 md:-translate-y-1/2 border border-gray-400 hover:border-black text-black p-2 sm:p-3 rounded-full shadow-md w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center"
+            >
+              &#10095;
+            </button>
+          </div>
+
+          <!-- Thumbnail Gallery -->
+          <div
+            class="hidden md:grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-2 mt-4 sm:mt-6 md:mt-8"
+          >
+            <img
+              src="assets/G1.webp"
+              class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer"
+              data-index="0"
+            />
+            <img
+              src="assets/G2.webp"
+              class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer"
+              data-index="1"
+            />
+            <img
+              src="assets/G3.webp"
+              class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer"
+              data-index="2"
+            />
+            <img
+              src="assets/G4.webp"
+              class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer"
+              data-index="3"
+            />
+            <img
+              src="assets/G5.webp"
+              class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer"
+              data-index="4"
+            />
+            <img
+              src="assets/G6.webp"
+              class="thumb w-full h-auto object-cover hover:scale-105 transition-transform duration-200 rounded-lg shadow-sm cursor-pointer"
+              data-index="5"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Remain same -->
+    <div id="footer"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
