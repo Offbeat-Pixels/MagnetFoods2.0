@@ -1,9 +1,13 @@
 @import "tailwindcss";
-
+/* @import url('https://fonts.googleapis.com/css2?family=Julee&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
 /* body{
    selection:bg-[#db8829] selection:text-white 
 } */
 
+/* Heading 2 → Catering and Event Design */
+
+ 
 @layer base{
     ::selection{
         @apply bg-[#ed9b3d] text-white 
@@ -66,33 +70,20 @@
 
 
 
+.testimonial-slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
-.testimonial-slider {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-    }
-    
-    .testimonial-slide {
-      display: none;
-      text-align: center;
-      padding: 20px;
-    }
-    
-    .testimonial-slide.active {
-      display: block;
-    }
-    
-    .dot {
-      height: 10px;
-      width: 10px;
-      margin: 0 5px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-    
-    .dot.active {
-      background-color: #e67e22;
-    }
+.testimonial-slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.dot.active {
+  background-color: #4B5563;
+}
