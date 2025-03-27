@@ -29,7 +29,7 @@
         <div
           class="absolute inset-0 h-40 sm:h-44 md:h-1/2 bg-contain bg-left bg-no-repeat"
           style="
-            background-image: url('https://cdn.builder.io/api/v1/imageassets/TEMP/38da83908d64c0367a6e0dfb860e55e9781b9aaafaafac851f21a7bd935cc18d?placeholderIfAbsent=true&apiKey=6897c858e2bd486ba7968bbb3c4ff5ed');
+            background-image: url('assets/AboutUsImg2.png');
           "
         ></div>
 
@@ -67,27 +67,105 @@
         <div
           class="relative flex flex-col md:flex-row justify-center items-center w-full mt-10 md:mt-14 px-4"
         >
-          <div
-            class="text-sm w-fit my-10 md:my-14 z-10 text-center text-white uppercase tracking-[3px] order-2 md:order-1"
+         <div class="md:pb-28 max-sm:mt-20 space-y-10">
+        <div
+          class="flex flex-col mx-auto justify-center w-fit mt-4 gap-4"
+        >
+          <button
+            id="openCateringModal"
+            class="bg-[#F1B436] hover:text-black text-white font-bold py-2 px-6 rounded-md"
           >
-            <a
-              href="#"
-              class="block py-2 px-6 leading-loose bg-teal-700 rounded-md hover:bg-teal-800 transition-colors"
+            2025 CATERING MENU
+          </button>
+
+          <button
+            id="openDealsModal"
+            class="bg-[#94C840] hover:text-black text-white font-bold py-2 px-6 rounded-md"
+          >
+            NEW HOT PACKAGE DEALS
+          </button>
+        </div>
+
+        <!-- Catering Menu Modal -->
+        <div
+          id="cateringModal"
+          class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center"
+        >
+          <div
+            class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative"
+          >
+            <button
+              id="closeCateringModal"
+              class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-xl font-bold"
             >
-              New Hot Package Deals
-            </a>
-            <a
-              href="#"
-              class="block py-2 px-6 mt-4 sm:mt-8 leading-loose bg-amber-600 rounded-md hover:bg-amber-700 transition-colors"
-            >
+              &times;
+            </button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
               2025 Catering Menu
-            </a>
+            </h2>
+            <p class="text-gray-700">
+              Explore our exclusive 2025 catering menu designed for premium
+              events!
+            </p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>🍽 Gourmet Appetizers</li>
+              <li>🍛 Exclusive Main Courses</li>
+              <li>🥗 Healthy Salads</li>
+              <li>🍰 Signature Desserts</li>
+            </ul>
+            <div class="mt-6 text-right">
+              <button
+                id="closeCateringModal2"
+                class="px-6 py-2 bg-[#F1B436] text-white rounded-md hover:bg-[#c88339]"
+              >
+                Close
+              </button>
+            </div>
           </div>
+        </div>
+
+        <!-- Package Deals Modal -->
+        <div
+          id="dealsModal"
+          class="fixed inset-0 hidden bg-black bg-opacity-50 flex  items-center justify-center"
+        >
+          <div
+            class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative"
+          >
+            <button
+              id="closeDealsModal"
+              class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-xl font-bold"
+            >
+              &times;
+            </button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+              New Hot Package Deals
+            </h2>
+            <p class="text-gray-700">
+              Check out our amazing package deals for 2025!
+            </p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>🔥 Discounted Catering Packages</li>
+              <li>🎉 Exclusive Party Deals</li>
+              <li>🥂 VIP Event Packages</li>
+              <li>🍹 Free Beverages on Select Deals</li>
+            </ul>
+            <div class="mt-6 text-right">
+              <button
+                id="closeDealsModal2"
+                class="px-6 py-2 bg-[#1F7D5B] text-white rounded-md hover:bg-[#176b4d]"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
           <div
             class="md: absolute max-sm:inset-0 md: right-0 w-full md:w-2/5 lg:w-[30rem] order-1 md:order-2"
           >
             <img
-              src="https://cdn.builder.io/api/v1/imageassets/TEMP/2fb50675291aa7fe0c7c8d301cceea433b0dc7507a7182484761d5d9431da0be?placeholderIfAbsent=true&apiKey=6897c858e2bd486ba7968bbb3c4ff5ed"
+              src="assets/AboutUsImg3.png"
               alt="Catering Display"
               class="w-full object-contain"
             />
