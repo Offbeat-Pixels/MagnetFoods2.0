@@ -1,12 +1,6 @@
 @import "tailwindcss";
 /* @import url('https://fonts.googleapis.com/css2?family=Julee&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
-/* body{
-   selection:bg-[#db8829] selection:text-white 
-} */
-
-/* Heading 2 → Catering and Event Design */
-
  
 @layer base{
     ::selection{
@@ -14,24 +8,11 @@
     }
 
 }
-
-
-.myanim {
-  animation: myAnim 2s ease 0s 1 normal forwards;
+.animate-spin {
+  animation: spin 10s linear infinite;
+  
 }
  
-@keyframes myAnim {
-  0% {
-    background-position: center bottom;
-    background-size: 100%;
-  }
-
-  100% {
-    background-position: center bottom;
-    background-size: 150%;
-  }
-}
-
 
 	div.at-container {
 		display: flex;

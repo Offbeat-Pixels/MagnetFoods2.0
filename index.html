@@ -14,7 +14,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
-  <body class="overflow-y-visible bg-cover bg-center bg-repeat-y" style="background-image: url(assets/HomeBg.png);">
+
+  <body
+    class="bg-cover bg-center bg-repeat-y"
+    style="background-image: url(assets/HomeBg.png)"
+  >
     <div id="navbar"></div>
 
     <!-- Hero Section -->
@@ -127,13 +131,27 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-10 px-5 md:px-0">
-      <div class="max-w-7xl md:w-[80%] mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold   mb-5 ">
-          Service We Offer
-        </h2>
+    <section
+      class="py-20 px-5 md:px-0 relative bg-no-repeat bg-contain bg-bottom"
+      style="background-image: url(assets/ServiceBg.png)"
+    >
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <img
+          src="assets/service-Plate.png"
+          alt=""
+          class="absolute size-60 object-contain right-0 top-0 animate-spin"
+        />
+        <img
+          src="assets/service-Plate2.png"
+          alt=""
+          class="absolute size-60 object-contain left-0 bottom-0 animate-spin"
+        />
+      </div>
+
+      <div class="max-w-7xl md:w-[80%] mx-auto relative">
+        <h2 class="text-4xl md:text-5xl font-bold mb-5">Service We Offer</h2>
         <p
-          class="text-justify tracking-tight md:tracking-normal md:text-left max-w-3xl  mr-auto  mb-16"
+          class="text-justify tracking-tight md:tracking-normal md:text-left max-w-3xl mr-auto mb-16"
         >
           Magnet Foods offers a wide range of specialized catering services
           designed to meet the unique needs of industrial, club, and outdoor
@@ -142,7 +160,7 @@
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div class="relative w-full  mx-auto">
+          <div class="relative w-full mx-auto">
             <img
               src="assets/service-1.png"
               alt="Industrial catering"
@@ -152,23 +170,24 @@
             <div
               class="absolute bottom-5 2xl:bottom-16 left-0 right-0 p-6 font-bold text-white text-center"
             >
-              <h3 class="text-xl  mb-2">
-                Industrial & Institutional  Catering Services
+              <h3 class="text-xl mb-2">
+                Industrial & Institutional Catering Services
               </h3>
-              <p class="text-sm mb-4 ">
-                At Ace Caterers, we specialize in providing high-quality catering operations...
+              <p class="text-sm mb-4">
+                At Ace Caterers, we specialize in providing high-quality
+                catering operations...
               </p>
 
               <a
                 href="services.html"
-                class="inline-flex items-center gap-2  font-medium "
+                class="inline-flex items-center gap-2 font-medium"
               >
                 READ MORE →
               </a>
             </div>
           </div>
 
-          <div class="relative w-full  mx-auto">
+          <div class="relative w-full mx-auto">
             <img
               src="assets/service-2.png"
               alt="Outdoor Catering"
@@ -179,20 +198,21 @@
               class="absolute bottom-10 2xl:bottom-20 left-0 right-0 p-6 font-bold text-white text-center"
             >
               <h3 class="text-xl mb-2">Outdoor Catering</h3>
-              <p class="text-sm mb-4 ">
-              Life is full of big and small happenings which prompt us to celebrate with friends and...
+              <p class="text-sm mb-4">
+                Life is full of big and small happenings which prompt us to
+                celebrate with friends and...
               </p>
 
               <a
                 href="services.html"
-                class="inline-flex items-center gap-2  font-medium "
+                class="inline-flex items-center gap-2 font-medium"
               >
                 READ MORE →
               </a>
             </div>
           </div>
 
-          <div class="relative w-full  mx-auto">
+          <div class="relative w-full mx-auto">
             <img
               src="assets/service-3.png"
               alt="Club Operations"
@@ -203,20 +223,21 @@
               class="absolute bottom-10 2xl:bottom-20 left-0 right-0 p-6 font-bold text-white text-center"
             >
               <h3 class="text-xl mb-2">Club Operations</h3>
-              <p class="text-sm mb-4 ">
-               For over six years, Magnet Foods has managed exclusive clubs, including those for guests...
+              <p class="text-sm mb-4">
+                For over six years, Magnet Foods has managed exclusive clubs,
+                including those for guests...
               </p>
 
               <a
                 href="services.html"
-                class="inline-flex items-center gap-2  font-medium "
+                class="inline-flex items-center gap-2 font-medium"
               >
                 READ MORE →
               </a>
             </div>
           </div>
 
-          <div class="relative w-full max-w-sm mx-auto mt-6">
+          <div class="relative w-full max-w-sm mx-auto">
             <img
               src="assets/service-4.png"
               alt="Operations & Maintenance"
@@ -229,13 +250,14 @@
               <h3 class="text-xl font-bold mb-2">
                 Operations & Maintenance (O&M)
               </h3>
-              <p class="text-sm mb-4 ">
-              If your property, whether it’s a club, restaurant, or event venue, isn’t delivering...
+              <p class="text-sm mb-4">
+                If your property, whether it's a club, restaurant, or event
+                venue, isn't delivering...
               </p>
 
               <a
                 href="services.html"
-                class="inline-flex items-center gap-2  font-medium "
+                class="inline-flex items-center gap-2 font-medium"
               >
                 READ MORE →
               </a>
@@ -252,58 +274,61 @@
     </section>
 
     <!-- Brands Section -->
-    <section class="py-20 px-5  bg-cover bg-center text-white" style="background-image: url(assets/BrandBg.png);"> 
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-5">
-          Brands We Operate
-        </h2>
-        <p class="text-center   max-w-3xl mx-auto mb-12">
-          At Fresh Connections Catering, we proudly donate a portion of our
-          sales to several charity projects each month. We believe that by
-          working together, we can make our community stronger.
-        </p>
-        <div class="flex flex-wrap justify-center items-center gap-1 md:gap-5  ">
-          <div class="w-fit">
-            <img
-              src="assets/Brand_3.png"
-              alt="Magnet Foods Logo"
-              class="mx-auto h-36 2xl:h-48 object-cover"
-            />
-          </div>
-      
-          <div class="w-fit">
-            <img
-              src="assets/Brand_4.png"
-              alt="Brand Logo 2"
-              class="mx-auto h-36 2xl:h-48 object-cover"
-            />
-          </div>
-              <div class="w-fit">
-            <img
-              src="assets/Brand_2.png"
-              alt="Brand Logo 1"
-              class="mx-auto h-36 2xl:h-48 object-cover"
-            />
-          </div>
-          <div class="w-fit">
-            <img
-              src="assets/Brand_1.png"
-              alt="Brand Logo 3"
-              class="mx-auto h-36 2xl:h-48 object-cover"
-            />
-          </div>
+    <section
+      class="py-20 px-5 bg-cover bg-center text-white"
+      style="background-image: url(assets/BrandBg.png)"
+    >
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-5">
+        Brands We Operate
+      </h2>
+      <p class="text-center max-w-3xl mx-auto mb-12">
+        At Fresh Connections Catering, we proudly donate a portion of our sales
+        to several charity projects each month. We believe that by working
+        together, we can make our community stronger.
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-1 md:gap-5">
+        <div class="w-fit">
+          <img
+            src="assets/Brand_3.png"
+            alt="Magnet Foods Logo"
+            class="mx-auto h-36 2xl:h-48 object-cover transition-transform duration-500 ease-in-out transform scale-100 hover:scale-110"
+          />
         </div>
-    
+
+        <div class="w-fit">
+          <img
+            src="assets/Brand_4.png"
+            alt="Brand Logo 2"
+            class="mx-auto h-36 2xl:h-48 object-cover transition-transform duration-500 ease-in-out transform scale-100 hover:scale-110"
+          />
+        </div>
+        <div class="w-fit">
+          <img
+            src="assets/Brand_2.png"
+            alt="Brand Logo 1"
+            class="mx-auto h-36 2xl:h-48 object-cover transition-transform duration-500 ease-in-out transform scale-100 hover:scale-110"
+          />
+        </div>
+        <div class="w-fit">
+          <img
+            src="assets/Brand_1.png"
+            alt="Brand Logo 3"
+            class="mx-auto h-36 2xl:h-48 object-cover transition-transform duration-500 ease-in-out transform scale-100 hover:scale-110"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-16 h-fit  ">
+    <section class="py-16 h-fit">
       <h4 class="text-3xl font-bold text-center mx-auto max-w-96 mb-10">
-        Check Out What People
-Said About Us
+        Check Out What People Said About Us
       </h4>
-      <div class=" w-full overflow-hidden  ">
-        <div class="testimonial-slider flex gap-20 ">
-          <div class="testimonial-slide active  bg-white shadow-2xl w-[50rem] mx-auto p-8 items-center border-2 border-gray-200 rounded-2xl min-h-80">
+      <div class="w-full overflow-hidden">
+        <div class="testimonial-slider flex gap-20">
+          <div
+            class="testimonial-slide active bg-white shadow-2xl w-[50rem] mx-auto p-8 items-center border-2 border-gray-200 rounded-2xl min-h-80"
+          >
             <p class="text-center text-gray-600 max-w-3xl mx-auto my-10 italic">
               "Had an amazing experience with Magnet Foods, the taste was just
               phenomenal and the quality of food was top- notch. They were quick
@@ -322,7 +347,9 @@ Said About Us
             </div>
             <p class="text-center font-semibold mt-4">Shreejana Chauhan</p>
           </div>
-          <div class="testimonial-slide active  bg-white shadow-2xl w-[50rem] mx-auto p-8 items-center border-2 border-gray-200 rounded-2xl min-h-80">
+          <div
+            class="testimonial-slide active bg-white shadow-2xl w-[50rem] mx-auto p-8 items-center border-2 border-gray-200 rounded-2xl min-h-80"
+          >
             <p class="text-center text-gray-600 max-w-3xl mx-auto my-10 italic">
               "Had an amazing experience with Magnet Foods, the taste was just
               phenomenal and the quality of food was top- notch. They were quick
@@ -341,7 +368,9 @@ Said About Us
             </div>
             <p class="text-center font-semibold mt-4">Shreejana Chauhan</p>
           </div>
-          <div class="testimonial-slide active  bg-white shadow-2xl w-[50rem] mx-auto p-8 items-center border-2 border-gray-200 rounded-2xl min-h-80">
+          <div
+            class="testimonial-slide active bg-white shadow-2xl w-[50rem] mx-auto p-8 items-center border-2 border-gray-200 rounded-2xl min-h-80"
+          >
             <p class="text-center text-gray-600 max-w-3xl mx-auto my-10 italic">
               "Had an amazing experience with Magnet Foods, the taste was just
               phenomenal and the quality of food was top- notch. They were quick
@@ -360,8 +389,8 @@ Said About Us
             </div>
             <p class="text-center font-semibold mt-4">Shreejana Chauhan</p>
           </div>
-          </div>
-      
+        </div>
+
         <div class="flex justify-center mt-6">
           <button
             id="prev-btn"
@@ -406,9 +435,23 @@ Said About Us
 
     <!-- Gallery Section -->
     <section
-      class="py-16 relative"
+      class="py-20 min-h-[50rem] relative bg-contain bg-no-repeat bg-bottom"
       style="background-image: url(assets/GalleryBg.png)"
     >
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <img
+          src="assets/gallery-Plate.png"
+          alt=""
+          class="absolute size-60 object-contain -right-5 top-0"
+        />
+      </div>
+      <div class="absolute inset-0 pointer-events-none">
+        <img
+          src="assets/menu-Plate.png"
+          alt=""
+          class="absolute size-40 object-contain right-5 ov -bottom-20"
+        />
+      </div>
       <div class="container max-w-5xl mx-auto px-4">
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
           Our Gallery
