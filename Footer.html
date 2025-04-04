@@ -1,18 +1,21 @@
 <!-- Food Showcase Section -->
-<section class="  ">
-  <!-- Background Section -->
-  <div
-    class="w-full h-44 md:h-96 flex items-center justify-center shadow-md"
-    style="background-image: url(assets/MenuBg.png)"
-  >
-  <!-- <p>Order Online & Get 20% Off!</p> -->
-    <button
-      onclick="openModal()"
-      class="w-72 md:w-fit h-fit hover:border py-2 px-6 text-lg cursor-pointer text-white bg-[#F1B436] rounded-md shadow-md"
-    >
-      View Our Menu
+<section class="w-full h-fit z-10 bg-transparent   overflow-visible">
+<div class="w-full">
+    <img src="assets/AboutUsBottomImg.png" alt="Catering Display" class="w-full object-cover" />
+</div>
+
+<div class="relative w-full bg-cover bg-center flex flex-col items-center justify-center shadow-md h-[20rem]">
+    <div class="absolute inset-0 w-full h-full">
+        <img src="assets/MenuBg.png" alt="Catering Display" class="w-full h-full object-fill" />
+    </div>
+    <p class="relative text-3xl text-white font-bold mb-5 z-10">
+        Order Online & Get 20% Off!
+    </p>
+    <button onclick="openModal()" class="relative w-72 md:w-fit h-fit hover:border py-2 px-6 text-lg cursor-pointer text-white bg-[#F1B436] rounded-md shadow-md z-10">
+        View Our Menu
     </button>
-  </div>
+</div>
+
 
   <!-- Menu Modal -->
   <div
