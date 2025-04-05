@@ -8,8 +8,10 @@
   </head>
   <body>
     <div id="navbar"></div>
-        <div class=" bg-cover bg-no-repeat h-fit " style="background-image: url(assets/HomeBg.png);">
- 
+    <div
+      class="bg-cover bg-no-repeat h-fit"
+      style="background-image: url(assets/HomeBg.jpg)"
+    >
       <section
         class="relative flex flex-col justify-center items-center w-full text-center text-white h-20 md:h-60 lg:h-80 px-5 py-10 md:py-24"
       >
@@ -25,21 +27,20 @@
         </h2>
       </section>
 
-      <section class="relative  md:pt-24   max-w-full">
- 
+      <section class="relative md:pt-24 max-w-full">
         <div
-          class="absolute inset-0 w-full h-40 sm:h-44 md:h-96 bg-cover  bg-no-repeat"
-          style="
-            background-image: url('assets/AboutUsImg2.png');
-          "
+          class="absolute inset-0 w-full h-40 sm:h-44 md:h-96 bg-cover bg-no-repeat"
+          style="background-image: url('assets/AboutUsImg2.png')"
         ></div>
 
-        <main class="relative mx-auto px-10 sm:px-6 w-full sm:max-w-xl md:max-w-3xl lg:max-w-6xl" >
+        <main
+          class="relative mx-auto px-10 max-sm:py-10 sm:px-6 w-full sm:max-w-xl md:max-w-3xl lg:max-w-6xl"
+        >
           <div class="flex gap-5 z-10 flex-col">
             <div class="mx-auto text-center w-full">
               <div class="flex flex-col justify-center w-full">
                 <p
-                  class="text-base sm:text-lg md:text-xl  mx-auto md:leading-relaxed  max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
+                  class="text-base sm:text-lg md:text-xl mx-auto md:leading-relaxed max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
                 >
                   Welcome to Magnet Foods, where we deliver An Experience with a
                   Difference. We are a dependable, satisfaction-oriented
@@ -49,7 +50,7 @@
                   special.
                 </p>
                 <p
-                  class="text-base sm:text-lg md:text-xl  mx-auto mt-6 md:mt-5 md:leading-relaxed  max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
+                  class="text-base sm:text-lg md:text-xl mx-auto mt-6 md:mt-5 md:leading-relaxed max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-4xl"
                 >
                   Whether for industrial needs or special occasions, we ensure
                   every event is celebrated with excellence and a personalized
@@ -64,102 +65,98 @@
         </main>
 
         <div
-          class="relative flex flex-col md:flex-row justify-center items-center h-fit w-full mt-10  px-4"
+          class="relative flex flex-col md:flex-row justify-center items-center h-fit w-full md:mt-10 px-4"
         >
-         <div class="max-sm:mt-20 ">
-        <div
-          class="flex flex-col mx-auto justify-center w-fit  gap-4"
-        >
-          <button
-            id="openCateringModal"
-            class="bg-[#F1B436] hover:text-black text-white font-bold py-2 px-6 rounded-md"
-          >
-            2025 CATERING MENU
-          </button>
-
-          <button
-            id="openDealsModal"
-            class="bg-[#94C840] hover:text-black text-white font-bold py-2 px-6 rounded-md"
-          >
-            NEW HOT PACKAGE DEALS
-          </button>
-        </div>
-
-        <!-- Catering Menu Modal -->
-        <div
-          id="cateringModal"
-          class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center"
-        >
-          <div
-            class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative"
-          >
-            <button
-              id="closeCateringModal"
-              class="absolute top-4 right-4  hover:text-red-500 text-xl font-bold"
-            >
-              &times;
-            </button>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-              2025 Catering Menu
-            </h2>
-            <p class="text-gray-700">
-              Explore our exclusive 2025 catering menu designed for premium
-              events!
-            </p>
-            <ul class="mt-4 space-y-2 text-gray-700">
-              <li>🍽 Gourmet Appetizers</li>
-              <li>🍛 Exclusive Main Courses</li>
-              <li>🥗 Healthy Salads</li>
-              <li>🍰 Signature Desserts</li>
-            </ul>
-            <div class="mt-6 text-right">
+          <div class="max-sm:mt-0">
+            <div class="flex flex-col mx-auto justify-center w-fit gap-4">
               <button
-                id="closeCateringModal2"
-                class="px-6 py-2 bg-[#F1B436] text-white rounded-md hover:bg-[#c88339]"
+                id="openCateringModal"
+                class="bg-[#F1B436] hover:text-black text-white font-bold py-2 px-6 rounded-md"
               >
-                Close
+                2025 CATERING MENU
+              </button>
+
+              <button
+                id="openDealsModal"
+                class="bg-[#94C840] hover:text-black text-white font-bold py-2 px-6 rounded-md"
+              >
+                NEW HOT PACKAGE DEALS
               </button>
             </div>
-          </div>
-        </div>
-
-        <!-- Package Deals Modal -->
-        <div
-          id="dealsModal"
-          class="fixed inset-0 hidden bg-black bg-opacity-50 flex  items-center justify-center"
-        >
-          <div
-            class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative"
-          >
-            <button
-              id="closeDealsModal"
-              class="absolute top-4 right-4  hover:text-red-500 text-xl font-bold"
+ 
+            <div
+              id="cateringModal"
+              class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center"
             >
-              &times;
-            </button>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-              New Hot Package Deals
-            </h2>
-            <p class="text-gray-700">
-              Check out our amazing package deals for 2025!
-            </p>
-            <ul class="mt-4 space-y-2 text-gray-700">
-              <li>🔥 Discounted Catering Packages</li>
-              <li>🎉 Exclusive Party Deals</li>
-              <li>🥂 VIP Event Packages</li>
-              <li>🍹 Free Beverages on Select Deals</li>
-            </ul>
-            <div class="mt-6 text-right">
-              <button
-                id="closeDealsModal2"
-                class="px-6 py-2 bg-[#1F7D5B] text-white rounded-md hover:bg-[#176b4d]"
+              <div
+                class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative"
               >
-                Close
-              </button>
+                <button
+                  id="closeCateringModal"
+                  class="absolute top-4 right-4 hover:text-red-500 text-xl font-bold"
+                >
+                  &times;
+                </button>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                  2025 Catering Menu
+                </h2>
+                <p class="text-gray-700">
+                  Explore our exclusive 2025 catering menu designed for premium
+                  events!
+                </p>
+                <ul class="mt-4 space-y-2 text-gray-700">
+                  <li>🍽 Gourmet Appetizers</li>
+                  <li>🍛 Exclusive Main Courses</li>
+                  <li>🥗 Healthy Salads</li>
+                  <li>🍰 Signature Desserts</li>
+                </ul>
+                <div class="mt-6 text-right">
+                  <button
+                    id="closeCateringModal2"
+                    class="px-6 py-2 bg-[#F1B436] text-white rounded-md hover:bg-[#c88339]"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+ 
+            <div
+              id="dealsModal"
+              class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center"
+            >
+              <div
+                class="bg-white w-11/12 md:w-2/3 lg:w-1/2 p-6 rounded-lg shadow-lg relative"
+              >
+                <button
+                  id="closeDealsModal"
+                  class="absolute top-4 right-4 hover:text-red-500 text-xl font-bold"
+                >
+                  &times;
+                </button>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+                  New Hot Package Deals
+                </h2>
+                <p class="text-gray-700">
+                  Check out our amazing package deals for 2025!
+                </p>
+                <ul class="mt-4 space-y-2 text-gray-700">
+                  <li>🔥 Discounted Catering Packages</li>
+                  <li>🎉 Exclusive Party Deals</li>
+                  <li>🥂 VIP Event Packages</li>
+                  <li>🍹 Free Beverages on Select Deals</li>
+                </ul>
+                <div class="mt-6 text-right">
+                  <button
+                    id="closeDealsModal2"
+                    class="px-6 py-2 bg-[#1F7D5B] text-white rounded-md hover:bg-[#176b4d]"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div> 
         </div>
       </section>
     </div>

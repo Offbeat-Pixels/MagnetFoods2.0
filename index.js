@@ -326,3 +326,19 @@ document.addEventListener("DOMContentLoaded", function () {
     "closeDealsModal2",
   ]);
 });
+
+
+
+document.addEventListener("DOMContentLoaded",function(){
+  const video = document.getElementById("videoElement");
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        video.play()
+      }else{
+        video. pause()
+      }
+    })
+  },{threshold:0.5})
+  observer.observe(video)
+})
